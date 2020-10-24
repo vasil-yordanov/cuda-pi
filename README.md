@@ -1,8 +1,8 @@
 # compile
 
 ```
-nvcc pi.cu -o gpu_pi.exe
-nvcc pi.c -o cpu_pi.exe
+nvcc gpu_pi.cu -o gpu_pi.exe
+nvcc cpu_pi.cu -o cpu_pi.exe
 ```
 
 # run
