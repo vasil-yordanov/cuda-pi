@@ -14,11 +14,7 @@ int main()
 
 	int blockSize; // The launch configurator returned block size
 	int minGridSize; // The minimum grid size needed to achieve the maximum occupancy for a full device launch
-	cudaOccupancyMaxPotentialBlockSize(
-		&minGridSize,
-		&blockSize,
-		(void*)MyKernel,
-		0);
+	cudaOccupancyMaxPotentialBlockSize(&minGridSize, &blockSize, (void*)MyKernel, 0);
 				
 	printf("blockSize= %d\n", blockSize);
 	printf("minGridSize= %d\n", minGridSize);
@@ -32,11 +28,8 @@ int main()
 	cudaGetDevice(&device);
 	cudaGetDeviceProperties(&prop, device);
 
-	cudaOccupancyMaxActiveBlocksPerMultiprocessor(
-	&numBlocks,
-	MyKernel,
-	blockSize,
-	0);
+	cudaOccupancyMaxActiveBlocksPerMultiprocessor(&numBlocks, MyKernel, blockSize, 0);
+	
 	activeWarps = numBlocks * blockSize / prop.warpSize;
 	maxWarps = prop.maxThreadsPerMultiProcessor / prop.warpSize;
 	printf("numBlocks: %d\n", numBlocks);
