@@ -47,9 +47,10 @@ CUDADevice with properties:
 # Summary comparison
 GPU v.s 1 core of CPU
 ```
-CPU=   25,056,689 points/sec
-GPU=7,857,542,549 points/sec
-GPU/CPU=313 times faster
+CPU =    25,056,689 points/sec
+GPU = 7,857,542,549 points/sec
+
+GPU/CPU = 313 times faster
 ```
 
 # Example CPU Run - 1 Core
