@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <curand_kernel.h> 
 #define TRIALS_PER_THREAD 1000000
 #define BLOCKS 256
 #define THREADS 256
 #define PI 3.14159265358979 // known value of pi 
 
-long pi_mc(long trials) {
+long pi_mc(unsigned long long trials) {
   double x, y;
   long points_in_circle=0;
   for(long i = 0; i < trials; i++) {
@@ -31,7 +32,7 @@ int main (int argc, char *argv[]) {
 
 	for (int j=1; j < 10000; j++) 
 	{ 
-		points_in_circle = pi_mc(BLOCKS * THREADS * TRIALS_PER_THREAD);
+		points_in_circle = pi_mc((unsigned long long)BLOCKS * THREADS);
 
 		total_points += (unsigned long long)BLOCKS * (unsigned long long)THREADS * (unsigned long long)TRIALS_PER_THREAD;
 		
