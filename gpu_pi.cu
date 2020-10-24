@@ -3,7 +3,7 @@
 #include <curand_kernel.h> // CURAND lib header file
 #define TRIALS_PER_THREAD 1000000
 #define BLOCKS 256
-#define THREADS 256
+#define THREADS 512
 #define PI 3.14159265358979 // known value of pi 
 
 __global__ void setup_kernel(curandState *states)
