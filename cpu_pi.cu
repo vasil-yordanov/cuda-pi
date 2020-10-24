@@ -32,7 +32,7 @@ int main (int argc, char *argv[]) {
 
 	for (int j=1; j < 10000; j++) 
 	{ 
-		points_in_circle = pi_mc((unsigned long long)BLOCKS * (unsigned long long)THREADS * (unsigned long long)TRIALS_PER_THREAD);
+		points_in_circle += pi_mc((unsigned long long)BLOCKS * (unsigned long long)THREADS * (unsigned long long)TRIALS_PER_THREAD);
 
 		total_points += (unsigned long long)BLOCKS * (unsigned long long)THREADS * (unsigned long long)TRIALS_PER_THREAD;
 		
