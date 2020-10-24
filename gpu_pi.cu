@@ -53,7 +53,9 @@ int main(int argc, char *argv[])
 	setup_kernel<<<BLOCKS, THREADS>>>(devStates);
 	
 	cudaEventRecord(start);
-	
+	printf("   time (ms)  |  total points   |  points in 1/4 circle |       estimated pi        |          error        \n");
+	printf("------------------------------------------------------------------------------------------------------------\n");
+
 	for (int j=1; j < 10000; j++) 
 	{ 
 		pi_mc<<<BLOCKS, THREADS>>>(dev, devStates);
